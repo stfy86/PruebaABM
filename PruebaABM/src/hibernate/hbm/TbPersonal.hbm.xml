@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbPersonal" table="tb_personal" schema="public">
+        <comment>Almacena los datos del personal militar y publico</comment>
+        <id name="perCod" type="int">
+            <column name="per_cod" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbUnidad" class="hibernate.pojo.TbUnidad" fetch="select">
+            <column name="uni_cod" />
+        </many-to-one>
+        <many-to-one name="tbPersonalTipo" class="hibernate.pojo.TbPersonalTipo" fetch="select">
+            <column name="pet_cod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbCargo" class="hibernate.pojo.TbCargo" fetch="select">
+            <column name="car_cod" />
+        </many-to-one>
+        <property name="perNum" type="int">
+            <column name="per_num" not-null="true" unique="true" />
+        </property>
+        <property name="perNombre" type="string">
+            <column name="per_nombre" length="200" />
+        </property>
+        <property name="perApellido" type="string">
+            <column name="per_apellido" length="200" />
+        </property>
+        <property name="perCi" type="java.lang.Integer">
+            <column name="per_ci" unique="true" />
+        </property>
+        <property name="perGrado" type="string">
+            <column name="per_grado" length="10" />
+        </property>
+        <property name="perArma" type="string">
+            <column name="per_arma" length="10" />
+        </property>
+        <property name="ecCod" type="int">
+            <column name="ec_cod" not-null="true" />
+        </property>
+        <property name="perAntiguedad" type="java.lang.Integer">
+            <column name="per_antiguedad" />
+        </property>
+        <property name="perCategoria" type="java.lang.Integer">
+            <column name="per_categoria" />
+        </property>
+        <set name="tbSueldosXPersonals" table="tb_sueldos_x_personal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="per_num" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbSueldosXPersonal" />
+        </set>
+        <set name="tbDescuentoses" table="tb_descuentos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="per_num" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbDescuentos" />
+        </set>
+        <set name="tbBonificacionesXPersonals" table="tb_bonificaciones_x_personal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="per_num" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbBonificacionesXPersonal" />
+        </set>
+    </class>
+</hibernate-mapping>

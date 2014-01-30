@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbGiraduria" table="tb_giraduria" schema="public">
+        <comment>Almacena datos de descuentos aplicados a personales</comment>
+        <id name="giCod" type="int">
+            <column name="gi_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="giNombreCorto" type="string">
+            <column name="gi_nombre_corto" length="10" not-null="true" />
+        </property>
+        <property name="giNombreLargo" type="string">
+            <column name="gi_nombre_largo" length="200" not-null="true" />
+        </property>
+        <property name="giDireccion" type="string">
+            <column name="gi_direccion" length="200" />
+        </property>
+        <property name="giTelefono" type="string">
+            <column name="gi_telefono" length="15" />
+        </property>
+        <set name="tbDescuentoses" table="tb_descuentos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="gi_cod" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbDescuentos" />
+        </set>
+    </class>
+</hibernate-mapping>

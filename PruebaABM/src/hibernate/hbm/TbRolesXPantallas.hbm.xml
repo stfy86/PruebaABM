@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbRolesXPantallas" table="tb_roles_x_pantallas" schema="public">
+        <comment>Almacena por los roles por pantallas</comment>
+        <id name="ropCod" type="int">
+            <column name="rop_cod" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbRoles" class="hibernate.pojo.TbRoles" fetch="select">
+            <column name="rol_cod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbPantallas" class="hibernate.pojo.TbPantallas" fetch="select">
+            <column name="pan_cod" not-null="true" />
+        </many-to-one>
+        <property name="panAdd" type="java.lang.Boolean">
+            <column name="pan_add" />
+        </property>
+        <property name="panEdit" type="java.lang.Boolean">
+            <column name="pan_edit" />
+        </property>
+        <property name="panDelete" type="java.lang.Boolean">
+            <column name="pan_delete" />
+        </property>
+    </class>
+</hibernate-mapping>

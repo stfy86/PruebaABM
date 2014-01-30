@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbPantallas" table="tb_pantallas" schema="public">
+        <comment>Almacena los nombres de las pantallas de cada modulo del sistema</comment>
+        <id name="panCod" type="int">
+            <column name="pan_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="panNombre" type="string">
+            <column name="pan_nombre" length="200" unique="true" />
+        </property>
+        <set name="tbRolesXPantallases" table="tb_roles_x_pantallas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pan_cod" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbRolesXPantallas" />
+        </set>
+    </class>
+</hibernate-mapping>

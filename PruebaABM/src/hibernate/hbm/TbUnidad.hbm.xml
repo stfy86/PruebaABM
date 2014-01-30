@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbUnidad" table="tb_unidad" schema="public">
+        <comment>Almacena datos de unidad militar</comment>
+        <id name="uniCod" type="int">
+            <column name="uni_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="uniNombreCorto" type="string">
+            <column name="uni_nombre_corto" length="10" not-null="true" />
+        </property>
+        <property name="uniNombreLargo" type="string">
+            <column name="uni_nombre_largo" length="100" not-null="true" />
+        </property>
+        <set name="tbPersonals" table="tb_personal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="uni_cod" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbPersonal" />
+        </set>
+    </class>
+</hibernate-mapping>

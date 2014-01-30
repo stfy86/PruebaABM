@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbPlanilla" table="tb_planilla" schema="public">
+        <comment>Almacena clasificacion de planillas cod 1 SSOO y SO cod 2 EEMM</comment>
+        <id name="plaCod" type="int">
+            <column name="pla_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="plaNombreCorto" type="string">
+            <column name="pla_nombre_corto" length="10" not-null="true" />
+        </property>
+        <property name="plaNombreLargo" type="string">
+            <column name="pla_nombre_largo" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/liquidacionsueldos</property>
+    <property name="hibernate.connection.username">liquidacionsueldos</property>
+    <property name="hibernate.connection.password">liquidacionsueldos</property>
+    <!-- Configuracion del pool interno -->
+    <property name="connection.pool_size">1</property>
+    <!-- Dialecto de la base de datos -->
+    <property name="dialect">org.hibernate.dialect.ProgressDialect</property>
+    <!-- Otras propiedades importantes -->
+    <property name="show_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
+    <!-- Archivos de mapeo -->
+    <mapping resource="hibernate/hbm/TbPantallas.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbSueldos.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbBonificaciones.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbPersonal.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbGiraduria.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbSueldosXPersonal.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbDescuentos.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbRolesXUsuario.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbPlanilla.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbArma.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbRolesXPantallas.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbRoles.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbCargo.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbGrado.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbPersonalTipo.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbBonificacionesXPersonal.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbModulos.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbEstadoCivil.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbUnidad.hbm.xml"/>
+    <mapping resource="hibernate/hbm/TbUsuarios.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

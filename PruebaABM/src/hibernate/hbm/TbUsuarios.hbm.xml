@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbUsuarios" table="tb_usuarios" schema="public">
+        <comment>Almacena los usuarios del sistema</comment>
+        <id name="usCod" type="int">
+            <column name="us_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="usCi" type="java.lang.Integer">
+            <column name="us_ci" unique="true" />
+        </property>
+        <property name="usNombre" type="string">
+            <column name="us_nombre" length="100" />
+        </property>
+        <property name="usApellido" type="string">
+            <column name="us_apellido" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

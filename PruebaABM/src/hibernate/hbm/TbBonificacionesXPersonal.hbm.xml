@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbBonificacionesXPersonal" table="tb_bonificaciones_x_personal" schema="public">
+        <comment>Almacena las bonificaciones correspondientes a los personales</comment>
+        <id name="bopCod" type="int">
+            <column name="bop_cod" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbPersonal" class="hibernate.pojo.TbPersonal" fetch="select">
+            <column name="per_num" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbBonificaciones" class="hibernate.pojo.TbBonificaciones" fetch="select">
+            <column name="bon_cod" not-null="true" />
+        </many-to-one>
+        <property name="bopMonto" type="int">
+            <column name="bop_monto" not-null="true" />
+        </property>
+        <property name="bopActivo" type="boolean">
+            <column name="bop_activo" not-null="true" />
+        </property>
+        <property name="bopFecha" type="date">
+            <column name="bop_fecha" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

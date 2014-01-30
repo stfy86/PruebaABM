@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="liquidacionsueldos" match-schema="public"/>
+  <table-filter match-name="tb_roles"/>
+  <table-filter match-name="tb_personal_tipo"/>
+  <table-filter match-name="tb_personal"/>
+  <table-filter match-name="tb_pantallas"/>
+  <table-filter match-name="tb_arma"/>
+  <table-filter match-name="tb_usuarios"/>
+  <table-filter match-name="tb_bonificaciones_x_personal"/>
+  <table-filter match-name="tb_descuentos"/>
+  <table-filter match-name="tb_cargo"/>
+  <table-filter match-name="tb_sueldos"/>
+  <table-filter match-name="tb_bonificaciones"/>
+  <table-filter match-name="tb_roles_x_pantallas"/>
+  <table-filter match-name="tb_unidad"/>
+  <table-filter match-name="tb_modulos"/>
+  <table-filter match-name="tb_sueldos_x_personal"/>
+  <table-filter match-name="tb_roles_x_usuario"/>
+  <table-filter match-name="tb_planilla"/>
+  <table-filter match-name="tb_grado"/>
+  <table-filter match-name="tb_estado_civil"/>
+  <table-filter match-name="tb_giraduria"/>
+</hibernate-reverse-engineering>

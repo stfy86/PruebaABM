@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/01/2014 02:08:05 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="hibernate.pojo.TbPersonalTipo" table="tb_personal_tipo" schema="public">
+        <comment>Almacena los tipos de personal</comment>
+        <id name="petCod" type="int">
+            <column name="pet_cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="petNombre" type="string">
+            <column name="pet_nombre" length="20" />
+        </property>
+        <set name="tbPersonals" table="tb_personal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pet_cod" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TbPersonal" />
+        </set>
+    </class>
+</hibernate-mapping>
